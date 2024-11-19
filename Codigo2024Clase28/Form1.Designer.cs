@@ -36,13 +36,14 @@
             txtName = new TextBox();
             btnGrabar = new Button();
             btnGrabarProcedimiento = new Button();
+            txtDescripcion = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             SuspendLayout();
             // 
             // dgvCategorias
             // 
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategorias.Location = new Point(26, 141);
+            dgvCategorias.Location = new Point(26, 176);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.RowHeadersWidth = 51;
             dgvCategorias.Size = new Size(738, 262);
@@ -50,7 +51,7 @@
             // 
             // btnListarCategorias
             // 
-            btnListarCategorias.Location = new Point(26, 75);
+            btnListarCategorias.Location = new Point(26, 141);
             btnListarCategorias.Name = "btnListarCategorias";
             btnListarCategorias.Size = new Size(140, 29);
             btnListarCategorias.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(172, 75);
+            button1.Location = new Point(181, 141);
             button1.Name = "button1";
             button1.Size = new Size(205, 29);
             button1.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(383, 75);
+            button2.Location = new Point(392, 141);
             button2.Name = "button2";
             button2.Size = new Size(149, 29);
             button2.TabIndex = 3;
@@ -112,11 +113,19 @@
             btnGrabarProcedimiento.UseVisualStyleBackColor = true;
             btnGrabarProcedimiento.Click += btnGrabarProcedimiento_Click;
             // 
+            // txtDescripcion
+            // 
+            txtDescripcion.Location = new Point(38, 77);
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(296, 27);
+            txtDescripcion.TabIndex = 8;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtDescripcion);
             Controls.Add(btnGrabarProcedimiento);
             Controls.Add(btnGrabar);
             Controls.Add(txtName);
@@ -142,5 +151,6 @@
         private TextBox txtName;
         private Button btnGrabar;
         private Button btnGrabarProcedimiento;
+        private TextBox txtDescripcion;
     }
 }

@@ -149,7 +149,7 @@ namespace Codigo2024Clase28
                 {
                     conexion.Open();               
 
-                    SqlCommand command = new SqlCommand("USP_InsertarCategoriaPrueba",conexion);
+                    SqlCommand command = new SqlCommand("USP_InsertarCategoriaPrueba", conexion);
                     command.CommandType = CommandType.StoredProcedure;
 
                     SqlParameter parameter1 = new SqlParameter("@IdCategoria", SqlDbType.Int);
@@ -158,8 +158,12 @@ namespace Codigo2024Clase28
                     SqlParameter parameter2 = new SqlParameter("@Nombre", SqlDbType.VarChar, 50);
                     parameter2.Value = txtName.Text;
 
+                    SqlParameter parameter3 = new SqlParameter("@Descripcion", SqlDbType.VarChar, 50);
+                    parameter3.Value = txtDescripcion.Text;
+
                     command.Parameters.Add(parameter1);
                     command.Parameters.Add(parameter2);
+                    command.Parameters.Add(parameter3);
 
 
 
