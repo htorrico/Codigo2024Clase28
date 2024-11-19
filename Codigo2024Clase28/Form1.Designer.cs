@@ -35,6 +35,7 @@
             txtID = new TextBox();
             txtName = new TextBox();
             btnGrabar = new Button();
+            btnGrabarProcedimiento = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             SuspendLayout();
             // 
@@ -101,11 +102,22 @@
             btnGrabar.UseVisualStyleBackColor = true;
             btnGrabar.Click += btnGrabar_Click;
             // 
+            // btnGrabarProcedimiento
+            // 
+            btnGrabarProcedimiento.Location = new Point(483, 35);
+            btnGrabarProcedimiento.Name = "btnGrabarProcedimiento";
+            btnGrabarProcedimiento.Size = new Size(185, 29);
+            btnGrabarProcedimiento.TabIndex = 7;
+            btnGrabarProcedimiento.Text = "Grabar Procedimiento";
+            btnGrabarProcedimiento.UseVisualStyleBackColor = true;
+            btnGrabarProcedimiento.Click += btnGrabarProcedimiento_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGrabarProcedimiento);
             Controls.Add(btnGrabar);
             Controls.Add(txtName);
             Controls.Add(txtID);
@@ -129,5 +141,6 @@
         private TextBox txtID;
         private TextBox txtName;
         private Button btnGrabar;
+        private Button btnGrabarProcedimiento;
     }
 }

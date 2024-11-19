@@ -124,7 +124,7 @@ namespace Codigo2024Clase28
                     string nombre = txtName.Text;
 
                     SqlCommand command = new SqlCommand("INSERT INTO Categorias (idcategoria,nombrecategoria) " +
-                        "VALUES ( "+ id+",'"+nombre+"')", conexion);
+                        "VALUES ( " + id + ",'" + nombre + "')", conexion);
 
                     command.ExecuteNonQuery();
 
@@ -137,6 +137,42 @@ namespace Codigo2024Clase28
                 throw ex;
             }
 
+        }
+
+        private void btnGrabarProcedimiento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection("data source=DESKTOP-BCQFL9J\\SQLEXPRESS;" +
+                  "initial catalog = NeptunoDB;  User Id=userPrueba; Pwd=123456;  " +
+                  "TrustServerCertificate=true"))
+                {
+                    conexion.Open();               
+
+                    SqlCommand command = new SqlCommand("USP_InsertarCategoriaPrueba",conexion);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter parameter1 = new SqlParameter("@IdCategoria", SqlDbType.Int);
+                    parameter1.Value = Convert.ToInt32(txtID.Text);
+
+                    SqlParameter parameter2 = new SqlParameter("@Nombre", SqlDbType.VarChar, 50);
+                    parameter2.Value = txtName.Text;
+
+                    command.Parameters.Add(parameter1);
+                    command.Parameters.Add(parameter2);
+
+
+
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Registro exitoso");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
