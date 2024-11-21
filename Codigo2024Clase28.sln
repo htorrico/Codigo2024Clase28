@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codigo2024Clase28", "Codigo2024Clase28\Codigo2024Clase28.csproj", "{4E558667-720B-456A-96DD-8E89A049B780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{A2A3657D-D5CE-4A82-BF61-EA86B79AFC7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{A2A3657D-D5CE-4A82-BF61-EA86B79AFC7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{F03FBF36-F79E-46BB-8E7B-A1C74D1AD96A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A2A3657D-D5CE-4A82-BF61-EA86B79AFC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A3657D-D5CE-4A82-BF61-EA86B79AFC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A3657D-D5CE-4A82-BF61-EA86B79AFC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03FBF36-F79E-46BB-8E7B-A1C74D1AD96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03FBF36-F79E-46BB-8E7B-A1C74D1AD96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03FBF36-F79E-46BB-8E7B-A1C74D1AD96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03FBF36-F79E-46BB-8E7B-A1C74D1AD96A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

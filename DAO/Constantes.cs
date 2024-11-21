@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Codigo2024Clase28
+namespace DAO
 {
     public static class Constantes
     {
@@ -13,3 +13,4 @@ namespace Codigo2024Clase28
                   "TrustServerCertificate=true";
     }
 }
+

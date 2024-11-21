@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using DAO;
 
 namespace Codigo2024Clase28
 {
@@ -70,68 +70,7 @@ namespace Codigo2024Clase28
         private void btnBuscarNew_Click(object sender, EventArgs e)
         {
 
-            SqlCommand command = null; ;
-            SqlParameter sqlParameter = null;
-            SqlParameter sqlParameter2=null;
-            List<Cliente> clientes = null;
-
-            try
-            {
-                clientes = new List<Cliente>();
-
-                using (SqlConnection conexion = new SqlConnection(Constantes.cadenaConexion))
-                {
-                    conexion.Open();
-
-                    command = new SqlCommand("USP_BuscarClientesPorFiltros", conexion);
-                    command.CommandType = CommandType.StoredProcedure;
-
-
-                    sqlParameter = new SqlParameter("@NombreContacto", SqlDbType.VarChar, 50);
-                    sqlParameter.Value = txtContacto.Text;
-
-
-                    sqlParameter2 = new SqlParameter("@CargoContacto", SqlDbType.VarChar, 50);
-                    sqlParameter2.Value = txtCargo.Text;
-
-                    command.Parameters.Add(sqlParameter);
-                    command.Parameters.Add(sqlParameter2);
-                 
-                 
-                    SqlDataReader reader = command.ExecuteReader();
-
-                   
-                    while (reader.Read())
-                    {
-                        clientes.Add(new Cliente
-                        {
-                            IdCliente = reader["IdCliente"].ToString(),
-                            NombreContacto = Convert.ToString(reader["NombreContacto"]),
-                            CargoContacto = Convert.ToString(reader["CargoContacto"]),
-                            Direccion = Convert.ToString(reader["Direccion"]),
-                            Ciudad = (reader["Ciudad"]).ToString(),      
-                            //Operador Ternario
-                            Region = reader["Region"] == null ? "" : reader["Region"].ToString()
-                        }
-                       );
-                    }                    
-                    dgvClientes.DataSource = clientes;
-                }
-           
-            }
-            catch (Exception ex)
-            {
-                //throw ex;
-                MessageBox.Show("Error, Comunicarse con el Administrador");
-            }
-            finally
-            {
-                command = null; 
-                sqlParameter = null;
-                sqlParameter2 = null;
-                clientes = null;
-
-            }
+            dgvClientes.DataSource = DatosCliente.ListarClientes(txtContacto.Text, txtCargo.Text);
 
         }
     }

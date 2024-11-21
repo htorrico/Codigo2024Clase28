@@ -11,7 +11,7 @@
         <StackPanel>
             <TextBox x:Name="txtNombre"  Height="20" Width="200"></TextBox>
             <Button x:Name="btnBuscar" Click="btnBuscar_Click" Height="20" Width="200" Content="Buscar"></Button>
-            <DataGrid x:Name="dgCategorias"></DataGrid>
+            <DataGrid x:Name="dgClientes"></DataGrid>
         </StackPanel>
 
     </Grid>

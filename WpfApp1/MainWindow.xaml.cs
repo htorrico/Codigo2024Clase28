@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAO;
 
 namespace WpfApp1
 {
@@ -23,7 +26,7 @@ namespace WpfApp1
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-
+            dgClientes.ItemsSource = DatosCliente.ListarClientes(txtNombre.Text, "");
         }
     }
 }
