@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Codigo2024Clase28
 {
@@ -15,6 +16,7 @@ namespace Codigo2024Clase28
     {
 
         DataTable datatable = new DataTable();
+      
         public Form3()
         {
             InitializeComponent();
@@ -25,9 +27,7 @@ namespace Codigo2024Clase28
             try
             {
 
-                using (SqlConnection conexion = new SqlConnection("data source=DESKTOP-BCQFL9J\\SQLEXPRESS;" +
-                  "initial catalog = NeptunoDB;  User Id=userPrueba; Pwd=123456;  " +
-                  "TrustServerCertificate=true"))
+                using (SqlConnection conexion = new SqlConnection(Constantes.cadenaConexion))
                 {
 
                     SqlCommand command = new SqlCommand("USP_BuscarClientesPorFiltros", conexion);
@@ -79,9 +79,7 @@ namespace Codigo2024Clase28
             {
                 clientes = new List<Cliente>();
 
-                using (SqlConnection conexion = new SqlConnection("data source=DESKTOP-BCQFL9J\\SQLEXPRESS;" +
-                  "initial catalog = NeptunoDB;  User Id=userPrueba; Pwd=123456;  " +
-                  "TrustServerCertificate=true"))
+                using (SqlConnection conexion = new SqlConnection(Constantes.cadenaConexion))
                 {
                     conexion.Open();
 
@@ -113,7 +111,7 @@ namespace Codigo2024Clase28
                             Direccion = Convert.ToString(reader["Direccion"]),
                             Ciudad = (reader["Ciudad"]).ToString(),      
                             //Operador Ternario
-                            Region = reader["Region"] == null ? "" : reader["campo"].ToString()
+                            Region = reader["Region"] == null ? "" : reader["Region"].ToString()
                         }
                        );
                     }                    

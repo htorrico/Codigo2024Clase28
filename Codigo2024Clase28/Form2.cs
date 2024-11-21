@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Codigo2024Clase28
 {
     public partial class Form2 : Form
-    {
+    {    
         public Form2()
         {
             InitializeComponent();
@@ -22,9 +22,7 @@ namespace Codigo2024Clase28
         {
             try
             {
-                using (SqlConnection conexion = new SqlConnection("data source=DESKTOP-BCQFL9J\\SQLEXPRESS;" +
-                  "initial catalog = NeptunoDB;  User Id=userPrueba; Pwd=123456;  " +
-                  "TrustServerCertificate=true"))
+                using (SqlConnection conexion = new SqlConnection(Constantes.cadenaConexion))
                 {
 
                     string commandstring = " SELECT" +
@@ -58,9 +56,7 @@ namespace Codigo2024Clase28
         {
             try
             {
-                using (SqlConnection conexion = new SqlConnection("data source=DESKTOP-BCQFL9J\\SQLEXPRESS;" +
-                  "initial catalog = NeptunoDB;  User Id=userPrueba; Pwd=123456;  " +
-                  "TrustServerCertificate=true"))
+                using (SqlConnection conexion = new SqlConnection(Constantes.cadenaConexion))
                 {
           
                     SqlCommand command = new SqlCommand("USP_ListarProductoAgrupado", conexion);
