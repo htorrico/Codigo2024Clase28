@@ -117,7 +117,7 @@
             btnBuscarNew.Name = "btnBuscarNew";
             btnBuscarNew.Size = new Size(94, 29);
             btnBuscarNew.TabIndex = 8;
-            btnBuscarNew.Text = "Buscar";
+            btnBuscarNew.Text = "Buscar DR";
             btnBuscarNew.UseVisualStyleBackColor = true;
             btnBuscarNew.Click += btnBuscarNew_Click;
             // 

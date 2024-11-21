@@ -13,5 +13,7 @@ namespace Codigo2024Clase28
         public string CargoContacto { get; set; }
         public string Direccion { get; set; }
         public string Ciudad { get; set; }
+        public string Region { get; set; }
+
     }
 }
